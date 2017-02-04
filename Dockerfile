@@ -12,6 +12,7 @@ RUN locale-gen en_US en_US.UTF-8 &&\
     apt-get update -q &&\
     apt-get install -y software-properties-common python-software-properties &&\
     apt-get install -y pritunl mongodb-org &&\
+    apt-get install -y iptables &&\
     apt-get clean &&\
     apt-get -y -q autoclean &&\
     apt-get -y -q autoremove &&\
