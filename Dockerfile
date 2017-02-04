@@ -28,3 +28,4 @@ ENTRYPOINT ["/bin/start-pritunl"]
 
 CMD ["/usr/bin/tail", "-f","/var/log/pritunl.log"]
 
+
