@@ -18,7 +18,7 @@ Username: pritunl Password: pritunl
 
 Then change 443 port to 9700 in Settings
 
-To disable listen on 80 port, exter to the container:
+To disable listen on 80 port, enter to the container:
 
 ```
 docker exec -it pritunl bash
@@ -28,4 +28,6 @@ and run:
 ```
 pritunl set app.redirect_server false
 ```
+
 Then you're on your own, but take a look at http://pritunl.com or https://github.com/pritunl/pritunl
+
