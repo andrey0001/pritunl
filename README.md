@@ -29,6 +29,21 @@ and run:
 pritunl set app.redirect_server false
 ```
 
+
+To enable LZO compression, create server and organization, attach organization to the server, then connect to the container:
+```
+docker exec -it pritunl bash
+```
+connect to mongo:
+```
+mongo pritunl
+```
+and run:
+```
+db.servers.update({}, {$set: {"lzo_compression" : true}}, { multi: true })
+```
+ 
+
 Then you're on your own, but take a look at http://pritunl.com or https://github.com/pritunl/pritunl
 
 
