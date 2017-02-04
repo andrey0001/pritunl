@@ -15,6 +15,7 @@ docker run --privileged -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl -
 
 Then you can login to your pritunl web ui at https://docker-host-address/
 Username: pritunl Password: pritunl
+
 Then change 443 port to 9700 in Settings
 
 To disable listen on 80 port, exter to the container:
