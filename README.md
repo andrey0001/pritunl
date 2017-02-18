@@ -3,9 +3,6 @@
 Just build it or pull it from andrey0001/pritunl. Run it something like this:
 
 ```
-Статья на русском языке - Article in Russian - http://andrey.org/openvpn-pritunl-docker/
-
-```
 docker run --privileged --name pritunl --hostname pritunl --restart unless-stopped  --net=host -d -t andrey0001/pritunl
 ```
 
@@ -49,4 +46,6 @@ db.servers.update({}, {$set: {"lzo_compression" : true}}, { multi: true })
 
 Then you're on your own, but take a look at http://pritunl.com or https://github.com/pritunl/pritunl
 
+```
+Статья на русском языке - Article in Russian - http://andrey.org/openvpn-pritunl-docker/
 
