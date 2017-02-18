@@ -46,6 +46,5 @@ db.servers.update({}, {$set: {"lzo_compression" : true}}, { multi: true })
 
 Then you're on your own, but take a look at http://pritunl.com or https://github.com/pritunl/pritunl
 
-```
 Статья на русском языке - Article in Russian - http://andrey.org/openvpn-pritunl-docker/
 
