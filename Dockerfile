@@ -4,7 +4,9 @@ MAINTAINER Andrey Sorokin <andrey@sorokin.org>
 
 ADD repo.list /etc/apt/sources.list.d/repo.list
 
-RUN locale-gen en_US en_US.UTF-8 &&\
+RUN apt-get update -q &&\
+    apt-get install -y locales &&\
+	locale-gen en_US en_US.UTF-8 &&\
     dpkg-reconfigure locales &&\
     ln -sf /usr/share/zoneinfo/UTC /etc/localtime &&\
     apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 42F3E95A2C4F08279C4960ADD68FA50FEA312927 &&\
