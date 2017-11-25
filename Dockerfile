@@ -9,7 +9,6 @@ RUN apt-get update -q &&\
 	locale-gen en_US en_US.UTF-8 &&\
     dpkg-reconfigure locales &&\
     ln -sf /usr/share/zoneinfo/UTC /etc/localtime &&\
-    apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 42F3E95A2C4F08279C4960ADD68FA50FEA312927 &&\
     apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A &&\
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 &&\
     apt-get update -q &&\
