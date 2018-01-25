@@ -10,7 +10,7 @@ If you have a mongodb somewhere you'd like to use for this rather than starting 
 do so through the MONGODB_URI env var like this:
 
 ```
-docker run --privileged -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl --name pritunl --hostname pritunl --restart unless-stopped  --net=host -d -t andrey0001/pritunl
+docker run --privileged -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl --name pritunl --restart unless-stopped  --net=host -d -t andrey0001/pritunl
 ```
 
 Then you can login to your pritunl web ui at https://docker-host-address/
