@@ -3,7 +3,7 @@
 Just build it or pull it from andrey0001/pritunl. Run it something like this:
 
 ```
-docker run --privileged --name pritunl --hostname pritunl --restart unless-stopped  --net=host -d -t andrey0001/pritunl
+docker run --privileged --name pritunl --restart unless-stopped  --net=host -d -t andrey0001/pritunl
 ```
 
 If you have a mongodb somewhere you'd like to use for this rather than starting the built-in one you can
