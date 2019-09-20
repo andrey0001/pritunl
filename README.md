@@ -30,7 +30,7 @@ pritunl set app.redirect_server false
 ```
 
 
-To enable LZO compression, create server and organization, attach organization to the server, then connect to the container:
+To enable LZO compression(works only on old versions), create server and organization, attach organization to the server, then connect to the container:
 ```
 docker exec -it pritunl bash
 ```
