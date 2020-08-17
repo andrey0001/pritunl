@@ -15,7 +15,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF1582
     DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common python-software-properties &&\
     DEBIAN_FRONTEND=noninteractive apt-get install -y pritunl mongodb-org &&\
     DEBIAN_FRONTEND=noninteractive apt-get install -y iptables &&\
-    DEBIAN_FRONTEND=noninteractive apt-get install -y dkms wireguard-dkms wireguard-tool &&\
+    DEBIAN_FRONTEND=noninteractive apt-get install -y wireguard-dkms wireguard-tool &&\
     apt-get clean &&\
     apt-get -y -q autoclean &&\
     apt-get -y -q autoremove &&\
