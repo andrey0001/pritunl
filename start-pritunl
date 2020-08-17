@@ -23,7 +23,6 @@ cat << EOF > /etc/pritunl.conf
     "bind_addr": "0.0.0.0",
     "port": 9700,
     "static_cache": true,
-    "www_path": "/usr/share/pritunl/www",
     "log_path": "/var/log/pritunl.log",
     "temp_path": "/tmp/pritunl_%r",
     "local_address_interface": "auto",
@@ -31,6 +30,7 @@ cat << EOF > /etc/pritunl.conf
 }
 EOF
 
-/usr/bin/pritunl start &
+#/usr/bin/pritunl start &
+/usr/bin/pritunl start --daemon --pidfile /var/run/pritunl.pid
 [ "$1" ] && exec "$@"
 
