@@ -4,7 +4,7 @@ MAINTAINER Andrey Sorokin <andrey@sorokin.org>
 
 ADD repo.list /etc/apt/sources.list.d/repo.list
 
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 9DA31620334BD75D9DCB49F368818C72E52529D4 &&\
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B &&\
     apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A &&\
     apt-get update -q &&\
     apt-get install -y --allow-unauthenticated apt-utils locales &&\
