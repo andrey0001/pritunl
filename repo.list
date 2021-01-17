@@ -1,6 +1,8 @@
 #mongodb-org-4.2.list
-deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+#deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+#deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse
 #pritunl.list
-deb https://repo.pritunl.com/stable/apt xenial main
-
+#deb https://repo.pritunl.com/stable/apt xenial main
+deb https://repo.pritunl.com/stable/apt bionic main
 
