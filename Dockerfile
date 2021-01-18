@@ -29,8 +29,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF1582
 ADD start-pritunl /bin/start-pritunl
 
 EXPOSE 9700
-EXPOSE 1194
-EXPOSE 1195
+EXPOSE 1194/UDP
+EXPOSE 1195/UDP
 
 ENTRYPOINT ["/bin/start-pritunl"]
 
