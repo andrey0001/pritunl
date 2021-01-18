@@ -32,9 +32,9 @@ EOF
 
 #/usr/bin/pritunl start &
 /usr/bin/pritunl set app.reverse_proxy true
-/usr/bin/sudo pritunl set app.redirect_server false
-/usr/bin/sudo pritunl set app.server_ssl false
-/usr/bin/sudo pritunl set app.server_port 9700
+/usr/bin/pritunl set app.redirect_server false
+/usr/bin/pritunl set app.server_ssl false
+/usr/bin/pritunl set app.server_port 9700
 
 /usr/bin/pritunl start --daemon --pidfile /var/run/pritunl.pid
 [ "$1" ] && exec "$@"
