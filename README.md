@@ -1,5 +1,7 @@
 ## Pritunl as a Docker container
 
+Please, see centos7 branch...
+
 Just build it or pull it from andrey0001/pritunl. Run it something like this:
 
 ```
