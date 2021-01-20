@@ -1,17 +1,18 @@
 ## Pritunl as a Docker container
 
-This is CentOS NoSSL container
-Just build it or pull it from andrey0001/pritunl. Run it something like this:
+This is CentOS NoSSL container for use with web-server, like nginx.
+
+Just build it or pull it from andrey0001/pritunl:centos7 . Run it something like this:
 
 ```
-docker run --privileged  -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp --name pritunl --restart unless-stopped -d -t andrey0001/pritunl:centos7
+docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp --name pritunl --restart unless-stopped -d -t andrey0001/pritunl:centos7
 ```
 
 If you have a mongodb somewhere you'd like to use for this rather than starting the built-in one you can
 do so through the MONGODB_URI env var like this:
 
 ```
-docker run --privileged -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl --name pritunl --restart unless-stopped -d -t andrey0001/pritunl
+docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl --name pritunl --restart unless-stopped -d -t andrey0001/pritunl:centos7
 ```
 Then, you can use nginx as frontend:
 
