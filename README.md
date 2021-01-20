@@ -13,7 +13,7 @@ do so through the MONGODB_URI env var like this:
 ```
 docker run --privileged -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl --name pritunl --restart unless-stopped -d -t andrey0001/pritunl
 ```
-Then, you can user nginx as frontend:
+Then, you can use nginx as frontend:
 
 ```
 server {
