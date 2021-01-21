@@ -20,6 +20,9 @@ EXPOSE 443
 EXPOSE 1194/UDP
 EXPOSE 1195/UDP
 
+HEALTHCHECK  --interval=5m --timeout=3s \
+  CMD curl --fail --silent --output /dev/null http://localhost:443/login || exit 1
+
 ENTRYPOINT ["/bin/start-pritunl"]
 
 CMD ["/usr/bin/tail", "-f","/var/log/pritunl.log"]
