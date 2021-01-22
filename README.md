@@ -28,7 +28,7 @@ server {
     ssl_prefer_server_ciphers   on;
 
   location / {
-    proxy_pass      http://localhost:925114;
+    proxy_pass      http://localhost:25114;
                      proxy_http_version 1.1;
                      proxy_set_header Upgrade $http_upgrade;
                      proxy_set_header Connection "upgrade";
