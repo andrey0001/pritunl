@@ -1,18 +1,32 @@
 ## Pritunl as a Docker container
 
-This is CentOS NoSSL container for use with web-server, like nginx.
+This is CentOS container for use with web-server, like nginx.
 
-Just build it or pull it from andrey0001/pritunl:centos7 . Run it something like this:
+Just build it or pull it from andrey0001/pritunl . Run it something like this:
 
 ```
-docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp --name pritunl --restart unless-stopped -d -t andrey0001/pritunl:centos7
+docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp --name pritunl --restart unless-stopped -d -t andrey0001/pritunl
 ```
 
 If you have a mongodb somewhere you'd like to use for this rather than starting the built-in one you can
 do so through the MONGODB_URI env var like this:
 
 ```
-docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl --name pritunl --restart unless-stopped -d -t andrey0001/pritunl:centos7
+docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl --name pritunl --restart unless-stopped -d -t andrey0001/pritunl
+```
+
+You can user variables:
+REVERSE_PROXY
+NO_REDIRECT_SERVER
+NO_SSL
+like:
+```
+docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp \
+-e REVERSE_PROXY=1 \
+-e NO_REDIRECT_SERVER=1 \
+-e NO_SSL=1 \
+-e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl \
+--name pritunl --restart unless-stopped -d -t andrey0001/pritunl
 ```
 Then, you can use nginx as frontend:
 
@@ -42,11 +56,11 @@ server {
 }
 ```
 
-I used commands before start pritunl:
+variables set before start pritunl:
 ```
-/usr/bin/pritunl set app.reverse_proxy true
-/usr/bin/pritunl set app.redirect_server false
-/usr/bin/pritunl set app.server_ssl false
+REVERSE_PROXY - /usr/bin/pritunl set app.reverse_proxy true
+NO_REDIRECT_SERVER - /usr/bin/pritunl set app.redirect_server false
+NO_SSL - /usr/bin/pritunl set app.server_ssl false
 ```
 
 Then you're on your own, but take a look at http://pritunl.com or https://github.com/pritunl/pritunl
