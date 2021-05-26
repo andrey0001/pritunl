@@ -1,8 +1,6 @@
 ## Pritunl as a Docker container
 
 
-This is CentOS container for use with web-server, like nginx.
-
 Just build it or pull it from andrey0001/pritunl . Run it something like this:
 
 
@@ -25,7 +23,8 @@ NO_REDIRECT_SERVER
 
 NO_SSL
 
-like:
+to  use with web-server, like nginx.
+
 ```
 docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp \
 -e REVERSE_PROXY=1 \
