@@ -21,10 +21,13 @@ do so through the MONGODB_URI env var like this:
 docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl --name pritunl --restart unless-stopped -d -t andrey0001/pritunl
 ```
 
-You can user variables:
+You can use variables:
 REVERSE_PROXY
+
 NO_REDIRECT_SERVER
+
 NO_SSL
+
 like:
 ```
 docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp \
