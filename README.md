@@ -22,6 +22,7 @@ docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp -e MONGOD
 ```
 
 You can use variables:
+
 REVERSE_PROXY
 
 NO_REDIRECT_SERVER
