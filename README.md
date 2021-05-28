@@ -23,6 +23,8 @@ NO_REDIRECT_SERVER
 
 NO_SSL
 
+SERVER_PORT 
+
 to  use with web-server, like nginx.
 
 ```
@@ -30,6 +32,7 @@ docker run --privileged -p 25114:443 -p 1194:1194/udp -p 1195:1195/udp \
 -e REVERSE_PROXY=1 \
 -e NO_REDIRECT_SERVER=1 \
 -e NO_SSL=1 \
+-e SERVER_PORT=9700
 -e MONGODB_URI=mongodb://some-mongo-host:27017/pritunl \
 --name pritunl --restart unless-stopped -d -t andrey0001/pritunl
 ```
@@ -66,6 +69,7 @@ variables set before start pritunl:
 REVERSE_PROXY - /usr/bin/pritunl set app.reverse_proxy true
 NO_REDIRECT_SERVER - /usr/bin/pritunl set app.redirect_server false
 NO_SSL - /usr/bin/pritunl set app.server_ssl false
+SERVER_PORT - /usr/bin/pritunl set app.server_port $SERVER_PORT
 ```
 
 Then you're on your own, but take a look at http://pritunl.com or https://github.com/pritunl/pritunl
