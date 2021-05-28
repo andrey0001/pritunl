@@ -11,9 +11,11 @@ before_script:
 pritunl-docker-build:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE:latest" -t "$CI_REGISTRY_IMAGE:$CI_PIPELINE_ID" ./
+    - |
+      tag="latest"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:${tag}" -t "$CI_REGISTRY_IMAGE:$CI_PIPELINE_ID" ./
     - docker push "$CI_REGISTRY_IMAGE:$CI_PIPELINE_ID"
-    - docker push "$CI_REGISTRY_IMAGE:latest"
+    - docker push "$CI_REGISTRY_IMAGE:${tag}"
   only:
     - master
 
