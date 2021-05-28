@@ -15,7 +15,7 @@ pritunl-docker-build:
       if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
         tag="latest"
       else
-        tag=":$CI_COMMIT_REF_SLUG"
+        tag="$CI_COMMIT_REF_SLUG"
       fi
     - docker build --pull -t "$CI_REGISTRY_IMAGE:${tag}" -t "$CI_REGISTRY_IMAGE:$CI_PIPELINE_ID" ./
     - docker push "$CI_REGISTRY_IMAGE:$CI_PIPELINE_ID"
