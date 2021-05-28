@@ -36,6 +36,9 @@ fi
 if [ -z "$NO_SSL" ]; then
 /usr/bin/pritunl set app.server_ssl false
 fi
+if [ -z "$SERVER_PORT" ]; then
+/usr/bin/pritunl set app.server_port $SERVER_PORT
+fi
 /usr/bin/pritunl start --daemon --pidfile /var/run/pritunl.pid
 [ "$1" ] && exec "$@"
 
