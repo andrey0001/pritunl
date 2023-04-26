@@ -1,19 +1,19 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 MAINTAINER Andrey Sorokin <andrey@sorokin.org>
 
 RUN apt-get update -q &&\
-    apt-get install -y --allow-unauthenticated apt-transport-https ca-certificates gnupg wget 
+    apt-get install -y --allow-unauthenticated apt-transport-https ca-certificates gnupg wget curl
 
-ADD repo.list /etc/apt/sources.list.d/repo.list
+RUN echo "deb http://repo.pritunl.com/stable/apt jammy main" >>/etc/apt/sources.list.d/pritunl.list
 
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B &&\
+RUN echo "deb http://repo.pritunl.com/stable/apt jammy main" >>/etc/apt/sources.list.d/pritunl.list &&\
     apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A &&\
-    wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add - &&\
+    curl https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_repo_pub.asc | apt-key add - &&\
+    echo "deb https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" >>/etc/apt/sources.list.d/mongodb-org-6.0.list &&\
+    wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add - &&\
     apt-get update -q &&\
-    apt-get install -y --allow-unauthenticated apt-transport-https ca-certificates &&\
-    apt-get update -q &&\
-    apt-get install -y --allow-unauthenticated apt-utils locales &&\
+    apt-get install -y --allow-unauthenticated apt-transport-https ca-certificates apt-utils locales  &&\
     locale-gen en_US en_US.UTF-8 &&\
     dpkg-reconfigure locales &&\
     ln -sf /usr/share/zoneinfo/UTC /etc/localtime &&\
@@ -24,7 +24,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF1582
     apt-get clean &&\
     apt-get -y -q autoclean &&\
     apt-get -y -q autoremove &&\
-    rm -rf /tmp/*
+    rm -rf /tmp/* 
 
 ADD start-pritunl /bin/start-pritunl
 
