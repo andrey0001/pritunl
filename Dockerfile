@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 MAINTAINER Andrey Sorokin <andrey@sorokin.org>
 
 RUN apt-get update -q &&\
-    apt-get install -y --allow-unauthenticated apt-transport-https ca-certificates gnupg wget curl
+    apt-get install -y --allow-unauthenticated apt-transport-https ca-certificates gnupg wget curl apt-utils locales
 
 RUN echo "deb http://repo.pritunl.com/stable/apt jammy main" >>/etc/apt/sources.list.d/pritunl.list
 
@@ -13,7 +13,6 @@ RUN echo "deb http://repo.pritunl.com/stable/apt jammy main" >>/etc/apt/sources.
     echo "deb https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" >>/etc/apt/sources.list.d/mongodb-org-6.0.list &&\
     wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add - &&\
     apt-get update -q &&\
-    apt-get install -y --allow-unauthenticated apt-transport-https ca-certificates apt-utils locales  &&\
     locale-gen en_US en_US.UTF-8 &&\
     dpkg-reconfigure locales &&\
     ln -sf /usr/share/zoneinfo/UTC /etc/localtime &&\
