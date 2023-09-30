@@ -27,9 +27,9 @@ cat << EOF > /etc/pritunl.conf
 EOF
 
 #/usr/bin/pritunl start &
-/usr/bin/pritunl set app.reverse_proxy true
+/usr/bin/pritunl set app.reverse_proxy false
 /usr/bin/pritunl set app.redirect_server false
-/usr/bin/pritunl set app.server_ssl false
+/usr/bin/pritunl set app.server_ssl true
 /usr/bin/pritunl start --daemon --pidfile /var/run/pritunl.pid
 [ "$1" ] && exec "$@"
 
