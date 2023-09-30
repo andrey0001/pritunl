@@ -27,6 +27,11 @@ cat << EOF > /etc/pritunl.conf
 EOF
 
 #/usr/bin/pritunl start &
+/usr/bin/pritunl set app.reverse_proxy false
+/usr/bin/pritunl set app.server_ssl true
+/usr/bin/pritunl set app.redirect_server false
+
+
 if [ -z "$REVERSE_PROXY" ]; then
 /usr/bin/pritunl set app.reverse_proxy true
 fi
